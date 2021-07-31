@@ -1,4 +1,5 @@
 import turtle
+from random import randint, randrange
 
 window = turtle.Screen()
 window.title("Pong for learning")
@@ -31,8 +32,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 2
-ball.dy = 2
+ball.dx = randrange(-2, 2)
+ball.dy = randrange(-2, 2)
 
 
 # Functions
@@ -81,6 +82,10 @@ while True:
 
     if ball.xcor() > 960:
         ball.goto(0, 0)
+        ball.dx = randrange(-2, 2)
+        ball.dy = randrange(-2, 2)
 
     if ball.xcor() < -960:
         ball.goto(0, 0)
+        ball.dx = randrange(-2, 2)
+        ball.dy = randrange(-2, 2)
