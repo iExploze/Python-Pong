@@ -31,6 +31,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 1
+ball.dy = 1
 
 
 # Functions
@@ -68,3 +70,7 @@ window.onkeypress(paddle_right_down, "Down")
 # main game loop
 while True:
     window.update()
+
+    # move the ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
