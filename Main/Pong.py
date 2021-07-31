@@ -34,8 +34,19 @@ ball.goto(0, 0)
 
 
 # Functions
+def paddle_left_up():
+    y = paddle_left.ycor()
+    y += 20
+    paddle_left.sety(y)
+
+
+def paddle_left_down():
+    y = paddle_left.ycor()
+    y -= 20
+    paddle_left.sety(y)
+
+
 def paddle_right_up():
-    print("Clicked!")
     y = paddle_right.ycor()
     y += 20
     paddle_right.sety(y)
@@ -49,9 +60,10 @@ def paddle_right_down():
 
 # Keyboard binding
 window.listen()
-window.onkeypress(paddle_right_up, "w")
-window.onkeypress(paddle_right_down, "s")
-
+window.onkeypress(paddle_left_up, "w")
+window.onkeypress(paddle_left_down, "s")
+window.onkeypress(paddle_right_up, "Up")
+window.onkeypress(paddle_right_down, "Down")
 
 # main game loop
 while True:
