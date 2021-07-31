@@ -79,7 +79,8 @@ while True:
     if ball.ycor() > 540 or ball.ycor() < -540:
         ball.dy = -ball.dy
 
-    if ball.xcor() > 960 or ball.xcor() < -960:
-        ball.dx = -ball.dx
+    if ball.xcor() > 960:
+        ball.goto(0, 0)
 
-
+    if ball.xcor() < -960:
+        ball.goto(0, 0)
