@@ -15,7 +15,6 @@ paddle_left.shapesize(stretch_wid=10, stretch_len=2)
 paddle_left.penup()
 paddle_left.goto(-800, 0)
 
-
 # Paddle Right
 paddle_right = turtle.Turtle()
 paddle_right.speed(0)
@@ -26,6 +25,32 @@ paddle_right.penup()
 paddle_right.goto(800, 0)
 
 # Ball
+ball = turtle.Turtle()
+ball.speed(0)
+ball.shape("circle")
+ball.color("white")
+ball.penup()
+ball.goto(0, 0)
+
+
+# Functions
+def paddle_right_up():
+    print("Clicked!")
+    y = paddle_right.ycor()
+    y += 20
+    paddle_right.sety(y)
+
+
+def paddle_right_down():
+    y = paddle_right.ycor()
+    y -= 20
+    paddle_right.sety(y)
+
+
+# Keyboard binding
+window.listen()
+window.onkeypress(paddle_right_up, "w")
+window.onkeypress(paddle_right_down, "s")
 
 
 # main game loop
