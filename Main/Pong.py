@@ -31,8 +31,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 1
-ball.dy = 1
+ball.dx = 2
+ball.dy = 2
 
 
 # Functions
@@ -74,3 +74,12 @@ while True:
     # move the ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    # checking the border
+    if ball.ycor() > 540 or ball.ycor() < -540:
+        ball.dy = -ball.dy
+
+    if ball.xcor() > 960 or ball.xcor() < -960:
+        ball.dx = -ball.dx
+
+
